@@ -73,7 +73,7 @@ public interface OrderDataDayLogDao {
 
      @Select("select * from order_data_day_log where id = '584895776698662912'")
      @ResultMap({
-             @Result(property = "",column = "")
+             @Result()
      })
      OrderDataDayLogDto getResultLog();
 }
