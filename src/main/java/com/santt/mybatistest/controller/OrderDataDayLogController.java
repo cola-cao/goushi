@@ -24,6 +24,7 @@ public class OrderDataDayLogController {
     @Autowired
     OrderDataDayLogDao orderDataDayLogDao;
 
+    //别名映射
     @GetMapping("/getLog/{orderId}")
     public OrderDataDayLogDto getLog(@PathVariable String orderId){
 
@@ -55,11 +56,22 @@ public class OrderDataDayLogController {
         return mapListLog;
     }
 
-    //ResultMap()映射
+    //Results()映射
     @GetMapping("/getResultLog/{orderId}")
     public OrderDataDayLogDto getResultLog(@PathVariable String orderId){
 
         OrderDataDayLogDto resultLog = orderDataDayLogDao.getResultLog();
+        System.out.println(resultLog);
         return resultLog;
     }
+
+    //Results()映射
+    @GetMapping("/getFactoryLog/{orderId}")
+    public OrderDataDayLogDto getFactoryLog(@PathVariable String orderId){
+
+        OrderDataDayLogDto resultLog = orderDataDayLogDao.getFactoryLog();
+        System.out.println(resultLog);
+        return resultLog;
+    }
+
 }
